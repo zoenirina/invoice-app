@@ -17,15 +17,17 @@ class InvoiceFactory extends Factory
     public function definition(): array
     {
         return [
-            'number'=> $this->faker->numberBetween(10,1000),
             'customer_id'=> $this->faker->numberBetween(1,20),
-            'date'=> $this->faker->date,
-            'due_date'=> $this->faker->date,
-            'reference'=> 'REF-'.rand(10,500),
-            'term_and_conditions'=> $this->faker->paragraph(2),
-            'sub_total'=> $this->faker->numberBetween(10,1000),
+            'total'=> $this->faker->numberBetween(10,1000),
             'discount'=> $this->faker->numberBetween(10,100),
-            'total'=> $this->faker->numberBetween(20,2000),
+            'sub_total'=> $this->faker->numberBetween(10,1000),
+            'status'=> $this->faker->numberBetween(0,3),
+            // 'start_hour'=> $this->faker->time(),
+            // 'final_hour'=> $this->faker->time(),
+            'date_suggest'=> $this->faker->dateTime(),
+            'date_appoint'=> $this->faker->dateTime(),
+            'term_and_conditions'=> $this->faker->paragraph(2),
+            'due_date'=> $this->faker->date(),
         ];
     }
 }

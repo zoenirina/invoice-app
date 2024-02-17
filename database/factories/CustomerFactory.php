@@ -20,6 +20,7 @@ class CustomerFactory extends Factory
             'firstname'=> $this->faker->name,
             'lastname'=> $this->faker->name,
             'email'=> $this->faker->email,
+            'tel'=> "0".rand(340000000,3499999999),
             'address'=> $this->faker->address,
         ];
     }

@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('customers', function (Blueprint $table) {
+        Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->string('firstname');
-            $table->string('lastname');
-            $table->string('tel');
-            $table->string('email')->unique();
-            $table->string('address');
-            $table->timestamps();
+            $table->string('category_id');
+            $table->string('service_name');
+            $table->string('description');  
+            $table->double('price'); 
+            $table->double('discount')->default(0);// remise sur une prestation
+            
         });
     }
 
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('customers');
+        Schema::dropIfExists('services');
     }
 };
